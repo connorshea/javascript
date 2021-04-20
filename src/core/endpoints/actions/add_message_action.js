@@ -37,7 +37,7 @@ export function postURL(
 ): string {
   let { channel, messageTimetoken } = incomingParams;
 
-  return `/v1/message-actions/${config.subscribeKey}/channel/${channel}/message/${messageTimetoken}`;
+  return `/v1/message-actions/${config.subscribeKey}/channel/${encodeURIComponent(channel)}/message/${messageTimetoken}`;
 }
 
 export function getRequestTimeout({ config }: ModulesInject) {

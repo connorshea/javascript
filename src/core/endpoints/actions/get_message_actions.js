@@ -29,7 +29,7 @@ export function getURL(
 ): string {
   let { channel } = incomingParams;
 
-  return `/v1/message-actions/${config.subscribeKey}/channel/${channel}`;
+  return `/v1/message-actions/${config.subscribeKey}/channel/${encodeURIComponent(channel)}`;
 }
 
 export function getRequestTimeout({ config }: ModulesInject) {
